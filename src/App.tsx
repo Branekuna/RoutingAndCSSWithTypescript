@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { AuthLayout } from './pages/AuthLayout';
+import { AuthLayout } from './pages/AuthLayout/AuthLayout';
+import { Main } from './pages/Home/Main';
 import { MainLayout } from './pages/MainLayout/MainLayout';
 import { PrivateRoute } from './pages/PrivateRouting';
 
@@ -16,7 +17,7 @@ export const App: React.FC = () => (
 			</Route>
 			<PrivateRoute exact path={['/home', '/topics', '/topics/:topicId']}>
 				<MainLayout>
-					<Route exact path="/home" component={() => <h1>Home</h1>} />
+					<Route exact path="/home" component={Main} />
 					<Route exact path="/topics" component={() => <h1>/TOPICS</h1>} />
 					<Route
 						exact
